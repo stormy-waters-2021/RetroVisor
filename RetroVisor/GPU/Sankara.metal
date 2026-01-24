@@ -78,8 +78,9 @@ namespace sankara {
     }
 
     inline Color3 sampleYCC(texture2d<half> tex, sampler sam, float2 uv, float mipLevel = 0) {
-        
-        return tex.sample(sam, uv, level(mipLevel)).rgb + Color3(0.0, -0.5, -0.5);
+
+        float2 clampedUV = clamp(uv, float2(0.01, 0.01), float2(0.99, 0.99));
+        return tex.sample(sam, clampedUV, level(mipLevel)).rgb + Color3(0.0, -0.5, -0.5);
     }
     
     //
