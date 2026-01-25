@@ -49,6 +49,7 @@ class ResampleFilter {
 
             filter.scaleTransform = transformPtr
             filter.encode(commandBuffer: commandBuffer, sourceTexture: input, destinationTexture: output)
+            filter.scaleTransform = nil
         }
     }
     
@@ -112,12 +113,15 @@ class BlurFilter {
             switch blurType {
             case .box:
                 let filter = MPSImageBox(device: output.device, kernelWidth: rw, kernelHeight: rh)
+                filter.edgeMode = .clamp
                 filter.encode(commandBuffer: commandBuffer, sourceTexture: input, destinationTexture: output)
             case .tent:
                 let filter = MPSImageTent(device: output.device, kernelWidth: rw, kernelHeight: rh)
+                filter.edgeMode = .clamp
                 filter.encode(commandBuffer: commandBuffer, sourceTexture: input, destinationTexture: output)
             case .gaussian:
                 let filter = MPSImageGaussianBlur(device: output.device, sigma: sigma)
+                filter.edgeMode = .clamp
                 filter.encode(commandBuffer: commandBuffer, sourceTexture: input, destinationTexture: output)
             }
         }

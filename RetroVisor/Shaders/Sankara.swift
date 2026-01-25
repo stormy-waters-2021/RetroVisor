@@ -557,6 +557,7 @@ final class Sankara: Shader {
         blurFilter = BlurFilter()
         dilationFilter = DilationFilter()
         pyramid = MPSImageGaussianPyramid(device: ShaderLibrary.device)
+        pyramid.edgeMode = .clamp
     }
     
     func updateTextures(commandBuffer: MTLCommandBuffer, in input: MTLTexture, out output: MTLTexture) {
