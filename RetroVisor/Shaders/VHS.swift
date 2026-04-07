@@ -41,7 +41,7 @@ final class VHS: Shader {
 
     init() {
 
-        super.init(name: "Vhs")
+        super.init(name: "VHS")
 
         settings = [
 
@@ -49,7 +49,7 @@ final class VHS: Shader {
                 
                 ShaderSetting(
                     title: "Wiggle",
-                    range: 0.0...10.0, step: 1.0,
+                    range: 0.0...10.0, step: 0.01,
                     value: Binding(
                         key: "wiggle",
                         get: { [unowned self] in self.uniforms.wiggle },
