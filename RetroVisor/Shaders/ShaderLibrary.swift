@@ -107,6 +107,7 @@ final class ShaderLibrary {
 
         shaders.append(Sankara())
         shaders.append(CRTEasy())
+        shaders.append(VHS())
         shaders.append(ColorFilter())
         shaders.append(ColorSplitter())
         

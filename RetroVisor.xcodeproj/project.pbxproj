@@ -53,6 +53,8 @@
 		50DE5B842E4CDB08002C07EC /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE5B832E4CDB02002C07EC /* Loggable.swift */; };
 		50DE5B862E4DA04B002C07EC /* Overlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE5B852E4DA045002C07EC /* Overlay.swift */; };
 		50DE5B882E4E0666002C07EC /* IconBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE5B872E4E065D002C07EC /* IconBar.swift */; };
+		CB62DCB12F84C17100B1AEDC /* VHS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB62DCB02F84C17100B1AEDC /* VHS.swift */; };
+		CB62DCB32F84C17D00B1AEDC /* VHS.metal in Sources */ = {isa = PBXBuildFile; fileRef = CB62DCB22F84C17D00B1AEDC /* VHS.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +108,8 @@
 		50DE5B832E4CDB02002C07EC /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
 		50DE5B852E4DA045002C07EC /* Overlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Overlay.swift; sourceTree = "<group>"; };
 		50DE5B872E4E065D002C07EC /* IconBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconBar.swift; sourceTree = "<group>"; };
+		CB62DCB02F84C17100B1AEDC /* VHS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VHS.swift; sourceTree = "<group>"; };
+		CB62DCB22F84C17D00B1AEDC /* VHS.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = VHS.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,7 @@
 				506936532E4F2FDB0037984F /* ColorFilter.swift */,
 				504F539F2E6173C300C5291F /* ColorSplitter.swift */,
 				5069364F2E4EFEFB0037984F /* CrtEasy.swift */,
+				CB62DCB02F84C17100B1AEDC /* VHS.swift */,
 				5011EDEC2E6317EC00B0938A /* Sankara.swift */,
 			);
 			path = Shaders;
@@ -234,6 +239,7 @@
 				507ADD3C2E6F257A00BB7E10 /* ColorFilter.metal */,
 				504F53A12E6179AE00C5291F /* ColorSplitter.metal */,
 				50BA96632E3FF0B3006BA8DF /* CrtEasy.metal */,
+				CB62DCB22F84C17D00B1AEDC /* VHS.metal */,
 				5011EDEA2E6317D500B0938A /* Sankara.metal */,
 			);
 			path = GPU;
@@ -336,6 +342,7 @@
 				50079E6E2E4331F5005BC5FD /* Menu.swift in Sources */,
 				50BA965B2E3D4865006BA8DF /* Animated.swift in Sources */,
 				504F53A22E6179BB00C5291F /* ColorSplitter.metal in Sources */,
+				CB62DCB32F84C17D00B1AEDC /* VHS.metal in Sources */,
 				50292D902E4685E10084CFE3 /* MetalView.swift in Sources */,
 				5011EDEB2E6317DE00B0938A /* Sankara.metal in Sources */,
 				503FCC292E48F2D200EF49DA /* ShaderPreferencesViewController.swift in Sources */,
@@ -356,6 +363,7 @@
 				50BA96542E3C80D6006BA8DF /* Shaders.metal in Sources */,
 				504F53A02E6173D000C5291F /* ColorSplitter.swift in Sources */,
 				507ADD3D2E6F258500BB7E10 /* ColorFilter.metal in Sources */,
+				CB62DCB12F84C17100B1AEDC /* VHS.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
