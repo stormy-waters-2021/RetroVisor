@@ -30,6 +30,12 @@
 		504F53A22E6179BB00C5291F /* ColorSplitter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 504F53A12E6179AE00C5291F /* ColorSplitter.metal */; };
 		5069364D2E4EFD2D0037984F /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069364C2E4EFD2B0037984F /* Shader.swift */; };
 		506936502E4EFF160037984F /* CrtEasy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069364F2E4EFEFB0037984F /* CrtEasy.swift */; };
+		50869017ADBFE0861F5A65F0 /* CrtLottes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EB55485F81410494611CF3 /* CrtLottes.swift */; };
+		50951C3CB913C0EA80C0812A /* CrtLottes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 50358D731F0FE93005022A26 /* CrtLottes.metal */; };
+		CA01GA01AAAAAA0100000001 /* CrtGuestAdvanced.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA01GA02AAAAAA0100000002 /* CrtGuestAdvanced.swift */; };
+		CA01GA03AAAAAA0100000003 /* CrtGuestAdvanced.metal in Sources */ = {isa = PBXBuildFile; fileRef = CA01GA04AAAAAA0100000004 /* CrtGuestAdvanced.metal */; };
+		DA02RI01BBBBBB0100000001 /* ResIndependentScanlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA02RI02BBBBBB0100000002 /* ResIndependentScanlines.swift */; };
+		DA02RI03BBBBBB0100000003 /* ResIndependentScanlines.metal in Sources */ = {isa = PBXBuildFile; fileRef = DA02RI04BBBBBB0100000004 /* ResIndependentScanlines.metal */; };
 		506936522E4F0E590037984F /* ShaderLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506936512E4F0E540037984F /* ShaderLibrary.swift */; };
 		506936542E4F2FE40037984F /* ColorFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506936532E4F2FDB0037984F /* ColorFilter.swift */; };
 		5069365C2E4F76280037984F /* Kernel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5069365B2E4F76250037984F /* Kernel.swift */; };
@@ -81,6 +87,12 @@
 		504F53A12E6179AE00C5291F /* ColorSplitter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ColorSplitter.metal; sourceTree = "<group>"; };
 		5069364C2E4EFD2B0037984F /* Shader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
 		5069364F2E4EFEFB0037984F /* CrtEasy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrtEasy.swift; sourceTree = "<group>"; };
+		50EB55485F81410494611CF3 /* CrtLottes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrtLottes.swift; sourceTree = "<group>"; };
+		50358D731F0FE93005022A26 /* CrtLottes.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrtLottes.metal; sourceTree = "<group>"; };
+		CA01GA02AAAAAA0100000002 /* CrtGuestAdvanced.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrtGuestAdvanced.swift; sourceTree = "<group>"; };
+		CA01GA04AAAAAA0100000004 /* CrtGuestAdvanced.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrtGuestAdvanced.metal; sourceTree = "<group>"; };
+		DA02RI02BBBBBB0100000002 /* ResIndependentScanlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResIndependentScanlines.swift; sourceTree = "<group>"; };
+		DA02RI04BBBBBB0100000004 /* ResIndependentScanlines.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ResIndependentScanlines.metal; sourceTree = "<group>"; };
 		506936512E4F0E540037984F /* ShaderLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderLibrary.swift; sourceTree = "<group>"; };
 		506936532E4F2FDB0037984F /* ColorFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFilter.swift; sourceTree = "<group>"; };
 		5069365B2E4F76250037984F /* Kernel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kernel.swift; sourceTree = "<group>"; };
@@ -178,6 +190,9 @@
 				506936532E4F2FDB0037984F /* ColorFilter.swift */,
 				504F539F2E6173C300C5291F /* ColorSplitter.swift */,
 				5069364F2E4EFEFB0037984F /* CrtEasy.swift */,
+				50EB55485F81410494611CF3 /* CrtLottes.swift */,
+				CA01GA02AAAAAA0100000002 /* CrtGuestAdvanced.swift */,
+				DA02RI02BBBBBB0100000002 /* ResIndependentScanlines.swift */,
 				CB62DCB02F84C17100B1AEDC /* VHS.swift */,
 				5011EDEC2E6317EC00B0938A /* Sankara.swift */,
 			);
@@ -239,6 +254,9 @@
 				507ADD3C2E6F257A00BB7E10 /* ColorFilter.metal */,
 				504F53A12E6179AE00C5291F /* ColorSplitter.metal */,
 				50BA96632E3FF0B3006BA8DF /* CrtEasy.metal */,
+				50358D731F0FE93005022A26 /* CrtLottes.metal */,
+				CA01GA04AAAAAA0100000004 /* CrtGuestAdvanced.metal */,
+				DA02RI04BBBBBB0100000004 /* ResIndependentScanlines.metal */,
 				CB62DCB22F84C17D00B1AEDC /* VHS.metal */,
 				5011EDEA2E6317D500B0938A /* Sankara.metal */,
 			);
@@ -364,6 +382,12 @@
 				504F53A02E6173D000C5291F /* ColorSplitter.swift in Sources */,
 				507ADD3D2E6F258500BB7E10 /* ColorFilter.metal in Sources */,
 				CB62DCB12F84C17100B1AEDC /* VHS.swift in Sources */,
+				50869017ADBFE0861F5A65F0 /* CrtLottes.swift in Sources */,
+				50951C3CB913C0EA80C0812A /* CrtLottes.metal in Sources */,
+				CA01GA01AAAAAA0100000001 /* CrtGuestAdvanced.swift in Sources */,
+				CA01GA03AAAAAA0100000003 /* CrtGuestAdvanced.metal in Sources */,
+				DA02RI01BBBBBB0100000001 /* ResIndependentScanlines.swift in Sources */,
+				DA02RI03BBBBBB0100000003 /* ResIndependentScanlines.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
