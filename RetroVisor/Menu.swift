@@ -47,6 +47,13 @@ extension AppDelegate: NSMenuItemValidation {
         )
         freeze.target = self
 
+        let showFps = NSMenuItem(
+            title: "Show FPS",
+            action: #selector(showFpsAction(_:)),
+            keyEquivalent: ""
+        )
+        showFps.target = self
+
         let record = NSMenuItem(
             title: "Start Recording",
             action: #selector(recorderAction(_:)),
@@ -62,6 +69,7 @@ extension AppDelegate: NSMenuItemValidation {
 
         menu.addItem(freeze)
         menu.addItem(background)
+        menu.addItem(showFps)
         menu.addItem(NSMenuItem.separator())
         menu.addItem(record)
         menu.addItem(NSMenuItem.separator())
@@ -101,6 +109,11 @@ extension AppDelegate: NSMenuItemValidation {
             }
             return true
 
+        case #selector(AppDelegate.showFpsAction(_:)):
+
+            menuItem.state = windowController?.metalView?.fpsVisible == true ? .on : .off
+            return true
+
         default:
             return true
         }
@@ -121,6 +134,13 @@ extension AppDelegate: NSMenuItemValidation {
 
         if let controller = windowController {
             controller.invisible.toggle()
+        }
+    }
+
+    @IBAction func showFpsAction(_ sender: NSMenuItem) {
+
+        if let metalView = windowController?.metalView {
+            metalView.fpsVisible.toggle()
         }
     }
 

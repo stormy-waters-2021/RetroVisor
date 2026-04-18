@@ -392,6 +392,9 @@ final class CRTGuestAdvanced: Shader {
         crtKernel        = GuestKernel(name: "crtguest::guestCrtPass")
         deconvKernel     = GuestKernel(name: "crtguest::guestDeconvergencePass")
 
+        // Load LUT textures
+        loadLUTs()
+
         frameCounter = 0
     }
 
@@ -403,6 +406,38 @@ final class CRTGuestAdvanced: Shader {
         avgLumTexA = nil; avgLumTexB = nil
         linearizeTex = nil; gaussHTex = nil; glowTex = nil
         bloomHTex = nil; bloomTex = nil; crtTex = nil
+        lut1 = nil; lut2 = nil; lut3 = nil; lut4 = nil
+    }
+
+    // MARK: - LUT loading
+
+    private func loadLUTs() {
+
+        let loader = MTKTextureLoader(device: ShaderLibrary.device)
+        let options: [MTKTextureLoader.Option: Any] = [
+            .SRGB: false,
+            .origin: MTKTextureLoader.Origin.topLeft
+        ]
+
+        let lutFiles = [
+            ("trinitron-lut", \CRTGuestAdvanced.lut1),
+            ("inv-trinitron-lut", \CRTGuestAdvanced.lut2),
+            ("nec-lut", \CRTGuestAdvanced.lut3),
+            ("ntsc-lut", \CRTGuestAdvanced.lut4)
+        ]
+
+        for (name, keyPath) in lutFiles {
+            if let url = Bundle.main.url(forResource: name, withExtension: "png") {
+                do {
+                    self[keyPath: keyPath] = try loader.newTexture(URL: url, options: options)
+                    self[keyPath: keyPath]?.label = name
+                } catch {
+                    log("Failed to load LUT \(name): \(error)")
+                }
+            } else {
+                log("LUT file not found: \(name).png")
+            }
+        }
     }
 
     // MARK: - Texture management

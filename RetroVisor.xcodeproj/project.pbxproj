@@ -54,6 +54,10 @@
 		50BA96592E3C80F5006BA8DF /* TrackingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA96582E3C80F2006BA8DF /* TrackingWindow.swift */; };
 		50BA965B2E3D4865006BA8DF /* Animated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA965A2E3D4861006BA8DF /* Animated.swift */; };
 		50BA965F2E3F6AA1006BA8DF /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 50BA965E2E3F6AA1006BA8DF /* Credits.rtf */; };
+		EA03LT01EF000001006BA8DF /* trinitron-lut.png in Resources */ = {isa = PBXBuildFile; fileRef = EA03LT05EF000001006BA8DF /* trinitron-lut.png */; };
+		EA03LT02EF000001006BA8DF /* inv-trinitron-lut.png in Resources */ = {isa = PBXBuildFile; fileRef = EA03LT06EF000001006BA8DF /* inv-trinitron-lut.png */; };
+		EA03LT03EF000001006BA8DF /* nec-lut.png in Resources */ = {isa = PBXBuildFile; fileRef = EA03LT07EF000001006BA8DF /* nec-lut.png */; };
+		EA03LT04EF000001006BA8DF /* ntsc-lut.png in Resources */ = {isa = PBXBuildFile; fileRef = EA03LT08EF000001006BA8DF /* ntsc-lut.png */; };
 		50BA96642E3FF0B3006BA8DF /* CrtEasy.metal in Sources */ = {isa = PBXBuildFile; fileRef = 50BA96632E3FF0B3006BA8DF /* CrtEasy.metal */; };
 		50BA966D2E40C3CB006BA8DF /* ShaderTableCellViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA966C2E40C3CB006BA8DF /* ShaderTableCellViews.swift */; };
 		50DE5B842E4CDB08002C07EC /* Loggable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DE5B832E4CDB02002C07EC /* Loggable.swift */; };
@@ -115,6 +119,10 @@
 		50BA96582E3C80F2006BA8DF /* TrackingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingWindow.swift; sourceTree = "<group>"; };
 		50BA965A2E3D4861006BA8DF /* Animated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animated.swift; sourceTree = "<group>"; };
 		50BA965E2E3F6AA1006BA8DF /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		EA03LT05EF000001006BA8DF /* trinitron-lut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "trinitron-lut.png"; sourceTree = "<group>"; };
+		EA03LT06EF000001006BA8DF /* inv-trinitron-lut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inv-trinitron-lut.png"; sourceTree = "<group>"; };
+		EA03LT07EF000001006BA8DF /* nec-lut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nec-lut.png"; sourceTree = "<group>"; };
+		EA03LT08EF000001006BA8DF /* ntsc-lut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ntsc-lut.png"; sourceTree = "<group>"; };
 		50BA96632E3FF0B3006BA8DF /* CrtEasy.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = CrtEasy.metal; sourceTree = "<group>"; };
 		50BA966C2E40C3CB006BA8DF /* ShaderTableCellViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaderTableCellViews.swift; sourceTree = "<group>"; };
 		50DE5B832E4CDB02002C07EC /* Loggable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loggable.swift; sourceTree = "<group>"; };
@@ -240,8 +248,20 @@
 			isa = PBXGroup;
 			children = (
 				50BA965E2E3F6AA1006BA8DF /* Credits.rtf */,
+				EA03LT09EF000001006BA8DF /* LUT */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		EA03LT09EF000001006BA8DF /* LUT */ = {
+			isa = PBXGroup;
+			children = (
+				EA03LT05EF000001006BA8DF /* trinitron-lut.png */,
+				EA03LT06EF000001006BA8DF /* inv-trinitron-lut.png */,
+				EA03LT07EF000001006BA8DF /* nec-lut.png */,
+				EA03LT08EF000001006BA8DF /* ntsc-lut.png */,
+			);
+			path = LUT;
 			sourceTree = "<group>";
 		};
 		50BA96672E3FF19B006BA8DF /* GPU */ = {
@@ -326,6 +346,10 @@
 			files = (
 				50BA96552E3C80D6006BA8DF /* Assets.xcassets in Resources */,
 				50BA965F2E3F6AA1006BA8DF /* Credits.rtf in Resources */,
+				EA03LT01EF000001006BA8DF /* trinitron-lut.png in Resources */,
+				EA03LT02EF000001006BA8DF /* inv-trinitron-lut.png in Resources */,
+				EA03LT03EF000001006BA8DF /* nec-lut.png in Resources */,
+				EA03LT04EF000001006BA8DF /* ntsc-lut.png in Resources */,
 				50BA96562E3C80D6006BA8DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

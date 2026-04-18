@@ -136,6 +136,21 @@ class MetalView: MTKView, Loggable, MTKViewDelegate {
     var intensity = Animated<Float>(0.0)
     var animates: Bool { intensity.current > 0 }
 
+    // FPS counter
+    var fpsLabel: NSTextField!
+    var fpsWindow: NSWindow?
+    var fpsLastTime: CFTimeInterval = 0
+    var fpsFrameCount: Int = 0
+    var fpsVisible: Bool = false {
+        didSet {
+            if fpsVisible {
+                fpsWindow?.orderFront(nil)
+            } else {
+                fpsWindow?.orderOut(nil)
+            }
+        }
+    }
+
     // Zooming and panning
     var shift: SIMD2<Float> = [0, 0] {
         didSet {
@@ -179,6 +194,16 @@ class MetalView: MTKView, Loggable, MTKViewDelegate {
         // Enable the magnification gesture
         let magnifyRecognizer = NSMagnificationGestureRecognizer(target: self, action: #selector(handleMagnify(_:)))
         addGestureRecognizer(magnifyRecognizer)
+
+        // FPS counter label (created lazily when window is available)
+        fpsLabel = NSTextField(labelWithString: "")
+        fpsLabel.font = NSFont.monospacedDigitSystemFont(ofSize: 12, weight: .medium)
+        fpsLabel.textColor = .white
+        fpsLabel.backgroundColor = NSColor.black.withAlphaComponent(0.5)
+        fpsLabel.isBezeled = false
+        fpsLabel.isEditable = false
+        fpsLabel.drawsBackground = true
+        fpsLabel.sizeToFit()
     }
 
     func initMetal() {
@@ -307,6 +332,21 @@ class MetalView: MTKView, Loggable, MTKViewDelegate {
     
     func draw(in view: MTKView) {
 
+        // Update FPS counter
+        if fpsVisible {
+            fpsFrameCount += 1
+            let now = CACurrentMediaTime()
+            let elapsed = now - fpsLastTime
+            if elapsed >= 1.0 {
+                let fps = Double(fpsFrameCount) / elapsed
+                DispatchQueue.main.async { [weak self] in
+                    self?.updateFpsLabel(fps: fps)
+                }
+                fpsFrameCount = 0
+                fpsLastTime = now
+            }
+        }
+
         // Wait for a free slot before encoding a new frame
         inFlightSemaphore.wait()
 
@@ -429,5 +469,37 @@ class MetalView: MTKView, Loggable, MTKViewDelegate {
         let deltaY = Float(event.scrollingDeltaY) / (2000.0 * zoom)
     
         shift = [shift.x - deltaX, shift.y - deltaY]
+    }
+
+    // MARK: - FPS overlay
+
+    private func updateFpsLabel(fps: Double) {
+
+        fpsLabel.stringValue = String(format: " %.0f FPS ", fps)
+        fpsLabel.sizeToFit()
+
+        // Create the child window on first use
+        if fpsWindow == nil, let parentWindow = window {
+            let w = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 80, height: 20),
+                             styleMask: .borderless,
+                             backing: .buffered,
+                             defer: false)
+            w.isOpaque = false
+            w.backgroundColor = .clear
+            w.ignoresMouseEvents = true
+            w.level = parentWindow.level
+            w.contentView = fpsLabel
+            parentWindow.addChildWindow(w, ordered: .above)
+            fpsWindow = w
+        }
+
+        // Position top-right of the parent window
+        if let parentFrame = window?.frame, let fpsWindow = fpsWindow {
+            let labelSize = fpsLabel.fittingSize
+            let x = parentFrame.maxX - labelSize.width - 8
+            let y = parentFrame.maxY - labelSize.height - 8
+            fpsWindow.setFrame(NSRect(x: x, y: y, width: labelSize.width, height: labelSize.height),
+                               display: true)
+        }
     }
 }
